@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Tracker - Register</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('images/img4.jpg'); /* Change to your image path */
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the background image */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff; /* Set text color to white for better visibility */
+            flex-direction: column; /* Added to account for navbar */
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: #1a1a2e;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* Container Styles */
+        .container {
+            background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            margin-top: 80px; /* Adjusted to account for navbar height */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            text-align: left;
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            width: 100%;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #6a11cb;
+            outline: none;
+        }
+
+        button {
+            background-color: #6a11cb;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #2575fc;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: #6a11cb;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            color: #2575fc;
+            text-decoration: underline;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            button {
+                padding: 10px;
+            }
+        }
+    </style>
+    <script>
+        // JavaScript function to show alert on successful registration
+        function showAlert() {
+            alert("Registered successfully!");
+            // Here you can also add logic to redirect to another page if needed
+            // window.location.href = "login.html"; // Example redirect
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Placement Tracker</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Create an Account</h1>
+        <form action="/register" method="post" onsubmit="showAlert(); return false;">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <a href="login.html">Already have an account? Login here</a>
+    </div>
+
+</body>
+</html>

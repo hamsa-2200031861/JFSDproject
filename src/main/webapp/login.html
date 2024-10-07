@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Interaction Tracker - Student Login</title>
+    <style>
+      
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-image: url('images/img11.png'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+        }
+
+        
+        nav {
+            background-color: #1a1a2e;
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 30px;
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 80px; /* Spacing adjustment for navbar */
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #4b0082;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+       
+        main {
+            background: rgba(255, 255, 255, 0.9); /* Semi-transparent background for better readability */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 5px;
+            display: block;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #4b0082;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        select:focus {
+            border-color: #4b0082;
+        }
+
+        button[type="submit"] {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #6e8efb;
+        }
+
+       
+        .social-login {
+            margin: 20px 0;
+        }
+
+        .social-login p {
+            margin: 0;
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .social-login button {
+            background-color: #4b0082;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            margin: 5px 0;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .social-login button:nth-child(2) {
+            background-color: #3b5998; /* Facebook */
+        }
+
+        .social-login button:nth-child(3) {
+            background-color: #db4437; /* Google */
+        }
+
+        .social-login button:hover {
+            opacity: 0.9;
+        }
+
+        
+        footer {
+            margin-top: 20px;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+       
+        a {
+            color: #4b0082;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        // JavaScript function to show alert on successful login
+        function showAlert() {
+            alert("No user found, please Register");
+            // Here you can also add logic to redirect to another page if needed
+            // window.location.href = "dashboard.html"; // Example redirect
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Placement Tracker</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <main>
+        <form action="/login" method="POST" onsubmit="showAlert(); return false;">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="role">Select Role:</label>
+            <select id="role" name="role" required>
+                <option value="" disabled selected>Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="student">Student</option>
+                <option value="placement_officer">Placement Officer</option>
+                <option value="employer">Employer</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="social-login">
+            <p>Or login with:</p>
+            <button type="button">Login with Facebook</button>
+            <button type="button">Login with Google</button>
+        </div>
+
+        <p>Don't have an account? <a href="register.html">Register here</a>.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Placement Interaction Tracker System</p>
+    </footer>
+
+</body>
+</html>
